@@ -57,7 +57,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #'DIRS': [os.path.join(BASE_DIR,'templates')],
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'crawler/templates'],
+        #'DIRS': [BASE_DIR / 'myclub_site/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,9 +147,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIR = [BASE_DIR, 'crawler/static']
+#STATICFILES_DIR = [BASE_DIR / 'crawler/static']
+#STATICFILES_DIRS = [BASE_DIR / 'myclub_site/static')]
+STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = [BASE_DIR, 'assets']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
