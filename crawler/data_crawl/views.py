@@ -3,7 +3,7 @@ import os
 from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup as bs
-from data_crawl.models import Product_details
+from data_crawl.models import Product_details, Product_type as pt
 import shutil 
 
 # Create your views here.
@@ -45,9 +45,11 @@ def index(request):
         dest = os.path.join(BASE_DIR, 'crawler/img/') + filename
 
 
+
         with open(dest,'wb') as f:
             shutil.copyfileobj(r.raw,  f)
-        p = Product_details(company_name = Name[k].get_text(), 
+        p = Product_details(product_type = pt.objects.get(id=1),
+                            company_name = Name[k].get_text(), 
                             photo = filename, 
                             description = Name[k].get_text(), 
                             price = Price[k].get_text().replace("₹",'').replace(",",'').strip(),
