@@ -48,19 +48,19 @@ def index(request):
 
         with open(dest,'wb') as f:
             shutil.copyfileobj(r.raw,  f)
-        p = Product_details(product_type = pt.objects.get(id=1),
-                            company_name = Name[k].get_text(), 
-                            photo = filename, 
-                            description = Name[k].get_text(), 
-                            price = Price[k].get_text().replace("₹",'').replace(",",'').strip(),
-                            memory = Ram[i].get_text(), 
-                            display = Ram[i+1].get_text(),
-                            camera = Ram[i+2].get_text(), 
-                            battery = Ram[i+3].get_text(), 
-                            processor = Ram[i+4].get_text())    
+        # p = Product_details(product_type = pt.objects.get(id=1),
+        #                     company_name = Name[k].get_text(), 
+        #                     photo = filename, 
+        #                     description = Name[k].get_text(), 
+        #                     price = Price[k].get_text().replace("₹",'').replace(",",'').strip(),
+        #                     memory = Ram[i].get_text(), 
+        #                     display = Ram[i+1].get_text(),
+        #                     camera = Ram[i+2].get_text(), 
+        #                     battery = Ram[i+3].get_text(), 
+        #                     processor = Ram[i+4].get_text())    
 
-        i = i+6
-        p.save()
+        # i = i+6
+        # p.save()
 
         
 
