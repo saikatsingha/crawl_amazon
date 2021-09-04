@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
    # 'django.contrib.product_list',
     'data_crawl',
+    # 'MobileApp.apps.MobileConfig'
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
