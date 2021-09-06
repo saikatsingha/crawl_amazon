@@ -44,8 +44,13 @@ INSTALLED_APPS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+]
+
+
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleWare',
+    'corsheaders.middleware.CorsMiddleWare',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
