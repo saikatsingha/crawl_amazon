@@ -9,9 +9,7 @@ export class Mobile extends Component {
   }
 
   refreshList(){
-    fetch(process.env.REACT_APP_API+'mobile')
-    .then(response=>response.json())
-    .then(data=>{
+    fetch(process.env.REACT_APP_API+'mobiles').then(response=>response.json()).then(data=>{
       this.setState({deps:data})
     });
   }

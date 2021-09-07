@@ -20,7 +20,7 @@ function App() {
 
       <Switch>
         <Route path='/' component={Home} exact/>
-        <Route path='/mobile' component={Mobile}/>
+        <Route path='/mobiles' component={Mobile}/>
       </Switch>
 
     </div>
